@@ -1,0 +1,325 @@
+.swiper-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#structuringSlide_p,
+#aboutSlide_p,
+#designingSlide_p {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.noFlicker_p {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+}
+
+.fullContainer_p {
+    position: relative;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-bottom: solid var(--border-weight) var(--border-colour);
+}
+
+.topContainer_p,
+.bottomContainer_p {
+    position: relative;
+    height: 50%;
+    width: 100%;
+}
+
+.topContainer_p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    padding: var(--padding);
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-right: solid var(--border-weight) var(--border-colour);
+    border-bottom: solid var(--border-weight) var(--border-colour);
+}
+
+.bottomContainer_p {
+    bottom: 0;
+    left: 0;
+}
+
+#shadow_p {
+    position: absolute;
+    background: var(--background);
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    z-index: -99;
+    visibility: hidden;
+    -webkit-box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.4);
+}
+
+#aboutText_p {
+    padding-top: calc(var(--padding) * 6);
+}
+
+#aboutContact_p {
+    margin-top: auto;
+    margin-left: var(--icon-size);
+    padding-left: var(--padding);
+}
+
+/*----------------------------------------
+Navigation
+----------------------------------------*/
+
+.slideNavigation_p {
+    position: absolute;
+    top: 0;
+    left: calc(var(--border-weight) * -1);
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 50);
+    display: flex;
+    flex-direction: row;
+}
+
+.slideNavLeft_p {
+    width: 25%;
+    height: 100%;
+    left: 0;
+    display: flex;
+    padding-top: calc(var(--padding) * 2);
+    padding-left: var(--padding);
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.slideHeader_p {
+    width: 50%;
+    height: 100%;
+    padding-top: calc(var(--padding) * 2);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.slideNavRight_p {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    padding-top: calc(var(--padding) * 2);
+    padding-right: var(--padding);
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.slideTitle_p {
+    position: absolute;
+    text-align: center;
+}
+
+/*----------------------------------------
+Flip Properties
+----------------------------------------*/
+
+.flipContainer_p {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    perspective: 1000;
+    -webkit-perspective: 1000;
+}
+
+.flipPanel_p {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+}
+
+.flipFront_p,
+.flipBack_p {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+}
+
+.hoz_p {
+    transform: rotateX(-180deg);
+}
+
+.ver_l {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+
+#structuringPanel_p,
+#designingPanel_p {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-origin: 50% 0%;
+}
+
+#structuringPanelFront_p,
+#designingPanelFront_p {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: var(--padding);
+    left: 0;
+    top: 0;
+    background: #ffffff;
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-right: solid var(--border-weight) var(--border-colour);
+}
+
+/*----------------------------------------
+Tech
+----------------------------------------*/
+
+#tech_p {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    pointer-events: none;
+}
+
+#techPanel_p {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: var(--padding);
+    background: #ffffff;
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-bottom: solid var(--border-weight) var(--border-colour);
+    transform-origin: 100% 100%;
+    pointer-events: all;
+    transform: rotateY(90deg);
+}
+
+ul.list_p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/*----------------------------------------
+Arrows
+----------------------------------------*/
+
+.arrow_p {
+    position: relative;
+    stroke-width: var(--arrow-weight);
+    padding: 0;
+    margin: 0;
+    height: var(--arrow-height);
+    fill: none;
+    stroke: var(--border-colour);
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 99;
+}
+
+.leftArrow_p {
+    position: relative;
+    width: var(--arrow-height);
+    transform: rotateZ(-90deg);
+}
+
+.rightArrow_p {
+    width: var(--arrow-height);
+    transform: rotateZ(90deg);
+    right: 0;
+}
+
+.downArrow_p {
+    transform: rotateZ(180deg);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+.techArrow_p {
+    width: var(--arrow-height);
+    transform: rotateZ(90deg);
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+
+/*----------------------------------------
+Text/Underline
+----------------------------------------*/
+
+.underline_p {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--border-colour);
+    text-decoration-thickness: var(--thin-underline);
+}
+
+/*----------------------------------------
+Icon
+----------------------------------------*/
+
+#iconContainer_p {
+    visibility: hidden;
+    position: fixed;
+    height: 100%;
+    width: 50%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#icon_p {
+    position: absolute;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    margin: calc(var(--padding) + var(--border-weight));
+    pointer-events: all;
+    overflow: visible;
+    z-index: 10000;
+}
+
+#open_p {
+    visibility: hidden;
+}
+
+#iconFixed_p {
+    position: absolute;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    margin: calc(var(--padding));
+    pointer-events: all;
+    overflow: visible;
+}

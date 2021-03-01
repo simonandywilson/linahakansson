@@ -1,0 +1,273 @@
+/*----------------------------------------
+Typeface
+----------------------------------------*/
+
+@font-face {
+    font-family: diatype_regular;
+    src: url("/fonts/diatype_regular.woff2") format("woff2"),
+        url("/fonts/diatype_regular.woff") format("woff");
+}
+
+/*----------------------------------------
+Media Queries
+----------------------------------------*/
+
+/* Portrait */
+@media only screen and (orientation: portrait) and (max-width: 699px)  {
+    :root {
+        --normal-font-size: 8.2vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.5);
+        --border-weight: 1vw;
+        --padding: 3vw;
+        --icon-size: 14vw;
+        --break: block;
+    }
+}
+@media only screen and (orientation: portrait) and (min-width: 700px)  {
+    :root {
+        --normal-font-size: 8.2vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.5);
+        --border-weight: 0.7vw;
+        --padding: 3vw;
+        --icon-size: 14vw;
+        --break: block;
+    }
+}
+
+/* Landscape */
+@media only screen and (orientation: landscape) and (max-height: 599px) {
+    :root {
+        --normal-font-size: 3.9vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.42);
+        --border-weight: 0.4vw;
+        --padding: 1.5vw;
+        --icon-size: 8vw;
+        --break: none;
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-height: 600px) {
+    :root {
+        --normal-font-size: 4vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.48);
+        --border-weight: 0.4vw;
+        --padding: 1.5vw;
+        --icon-size: 8vw;
+        --break: none;
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-height: 700px) {
+    :root {
+        --normal-font-size: 4.1vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.5);
+        --border-weight: 0.4vw;
+        --padding: 1.5vw;
+        --icon-size: 8vw;
+        --break: block;
+    }
+}
+
+:root {
+    --font-family: diatype_regular;
+    --normal-line-height: 110%;
+    --small-line-height: 110%;
+    
+    --underline: calc(var(--border-weight) * 0.5);
+    --thin-underline: calc(var(--border-weight) * 0.5);
+
+    --arrow-weight: calc(var(--border-weight) / 2);
+    --arrow-height: var(--normal-font-size);
+    --logo-weight: calc(var(--border-weight) / 2);
+
+    --background: #CCCCCC;
+    --border-colour: #0000FF;
+}
+
+/*----------------------------------------
+Main
+----------------------------------------*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+html body {
+    position: absolute;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: var(--background);
+    font-family: var(--font-family);
+    font-size: var(--normal-font-size);
+    line-height: var(--normal-line-height);
+}
+
+#loader,
+#landscape,
+#portrait {
+    position: absolute;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    display: flex;
+}
+
+#landscape,
+#portrait {
+    display: none;
+    visibility: hidden;
+}
+
+/*----------------------------------------
+Typography
+----------------------------------------*/
+
+.small {
+    font-size: var(--small-font-size);
+    line-height: var(--small-line-height);
+}
+
+.noBreak {
+    white-space: nowrap;
+}
+
+.break {
+    display: var(--break);
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--border-colour);
+    text-decoration: none;
+}
+
+/*----------------------------------------
+Cube
+----------------------------------------*/
+
+.leftContainer,
+.rightContainer {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    transform-style: preserve-3d;
+}
+
+.leftContainer {
+    --rotX: 0;
+    --rotY: 0;
+    --transX: 0;
+    z-index: -99;
+    transform: translate3D(var(--transX), 0, 0) rotateX(var(--rotX)) rotateY(var(--rotY));
+    transform-origin: bottom right;
+}
+
+.rightContainer {
+    --rotX: 0;
+    --rotY: 0;
+    --transX: 0;
+    z-index: -99;
+    transform: translate3D(var(--transX), 0, 0) rotateX(var(--rotX)) rotateY(var(--rotY));
+    transform-origin: bottom left;
+}
+
+.cube {
+    cursor: pointer;
+    z-index: 1;
+}
+
+.face {
+    position: relative;
+    background: #ffffff;
+}
+
+.leftTop {
+    --rotX: 90deg;
+    --offsetX: 0;
+    --offsetY: 0;
+    --offsetZ: 0;
+    transform-origin: bottom right;
+    transform: translate3D(var(--offsetX), var(--offsetY), var(--offsetZ)) rotateX(var(--rotX));
+    border-left: solid var(--border-weight) var(--border-colour);
+    z-index: 1;
+}
+
+.leftTop::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-bottom: solid 1px #ffffff;
+}
+
+.leftBottom {
+    --offsetX: 0;
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-bottom: solid var(--border-weight) var(--border-colour);
+    transform: translate3D(var(--offsetX), 0, 0);
+    transform-origin: bottom right;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    clip-path: inset(0px 0px -15px 0px);
+}
+
+.rightTop {
+    --rotX: 90deg;
+    --offsetX: 0;
+    --offsetY: 0;
+    --offsetZ: 0;
+    transform-origin: bottom left;
+    transform: translate3D(var(--offsetX), var(--offsetY), var(--offsetZ)) rotateX(var(--rotX));
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-right: solid var(--border-weight) var(--border-colour);
+    border-bottom: solid var(--border-weight) var(--border-colour);
+}
+
+.rightBottom {
+    --offsetX: 0;
+    --offsetZ: 0;
+    border-left: solid var(--border-weight) var(--border-colour);
+    border-right: solid var(--border-weight) var(--border-colour);
+    transform: translate3D(var(--offsetX), 0, var(--offsetZ));
+    transform-origin: bottom left;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    clip-path: inset(0px 0px -15px 0px);
+}
+
+/*----------------------------------------
+Icon
+----------------------------------------*/
+
+.icon {
+    position: absolute;
+    pointer-events: none;
+    stroke-width: var(--logo-weight);
+    stroke-miterlimit: 1;
+    stroke-linejoin: bevel;
+    stroke-linecap: butt;
+    fill: none;
+    stroke: var(--border-colour);
+}

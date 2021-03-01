@@ -1,0 +1,19 @@
+{
+    "name": "Lina H\u00e5kkanson",
+    "short_name": "Lina H\u00e5kkanson",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png?v=A05kLr7zxM",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-512x512.png?v=A05kLr7zxM",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

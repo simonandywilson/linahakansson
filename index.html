@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Studio Lina Håkansson</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Simon Wilson www.simonwilson.design" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Studio Lina Håkansson" />
+    <meta
+      name="description"
+      content="Studio Lina Håkansson works at the intersection of design and production, offering a unique position to challenge both how to design structures and how to structure designs."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linahakansson.com" />
+    <meta property="og:title" content="Studio Lina Håkansson" />
+    <meta
+      property="og:description"
+      content="Studio Lina Håkansson works at the intersection of design and production, offering a unique position to challenge both how to design structures and how to structure designs."
+    />
+    <meta property="og:image" content="favicon/banner.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://linahakansson.com" />
+    <meta property="twitter:title" content="Studio Lina Håkansson" />
+    <meta
+      property="twitter:description"
+      content="Studio Lina Håkansson works at the intersection of design and production, offering a unique position to challenge both how to design structures and how to structure designs."
+    />
+    <meta property="twitter:image" content="favicon/banner.png" />
+
+    <!-- CSS -->
+    <link href="/styles/swiper.css" rel="stylesheet" />
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="/styles/landscape.css" rel="stylesheet" />
+    <link href="/styles/portrait.css" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png?v=A05kLr7zxM"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png?v=A05kLr7zxM"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png?v=A05kLr7zxM"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest?v=A05kLr7zxM" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg?v=A05kLr7zxM"
+      color="#0000ff"
+    />
+    <link rel="shortcut icon" href="favicon/favicon.ico?v=A05kLr7zxM" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-config"
+      content="favicon/browserconfig.xml?v=A05kLr7zxM"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Script -->
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      window.addEventListener("resize", () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="loader">
+      <div class="leftContainer">
+        <div class="cube" onclick="animateCube()">
+          <div class="face leftTop"></div>
+          <div class="face leftBottom"></div>
+        </div>
+      </div>
+      <div class="rightContainer">
+        <div class="cube" onclick="animateCube()">
+          <div class="face rightTop"></div>
+          <div class="face rightBottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="iconContainer_l" class="flipContainer_l">
+      <div id="iconPanel_l" class="flipPanel_l">
+        <div id="iconFront_l" class="flipFront_l">
+          <div id="icon_l" onclick="animateLandscape()">
+            <svg id="open_l" class="icon" viewBox="0 0 283.46 283.46">
+              <path
+                d="M29.6 29.6v224.27h112.13V29.6m112.14 224.27V29.6M141.73 142.56h112.14"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+            <svg
+              id="closed_l"
+              class="icon"
+              viewBox="0 0 283.46 283.46"
+              fill="none"
+              stroke="#00f"
+              stroke-miterlimit="10"
+              stroke-width="3.55"
+            >
+              <path
+                d="M144.31 139.49v132.12L29.9 205.56V73.44l114.41 66.05z"
+                vector-effect="non-scaling-stroke"
+              />
+              <path
+                d="M144.32 139.5l109.25-63.08M141.73 11.85l111.84 64.57v129.14"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="landscape">
+      <div id="left_l" class="flipContainer_l">
+        <div id="aboutPanel_l" class="flipPanel_l">
+          <div id="aboutFront_l" class="flipFront_l">
+            <div class="aboutText_l">
+              <span class="noBreak">Studio Lina Håkansson</span>
+              <br />
+              works at the intersection
+              <br />
+              of design and production,
+              <br />
+              offering a unique position
+              <br />
+              to challenge both how
+              <br />
+              to
+              <span class="designingUnderlineP_l designingTrigger_l">
+                design structures
+                <span class="designingUnderline_l"></span>
+              </span>
+              and
+              <br />
+              how to
+              <span class="structuringUnderlineP_l structuringTrigger_l">
+                structure designs
+                <span class="structuringUnderline_l"></span> </span
+              >&#8239;.
+            </div>
+            <div id="aboutContact_l" class="small">
+              <a href="mailto:studio@linahakansson.com">
+                studio@linahakansson.com
+              </a>
+              <br />
+              <a
+                href="https://www.instagram.com/studiolinahakansson/"
+                target="_blank"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+          <div id="aboutBack_l" class="flipBack_l ver_l">
+            <ul class="small list_l">
+              <li>Design Concepts</li>
+              <li>Structural engineering</li>
+              <li>2D CAD drawings &ndash; ArtiosCAD</li>
+              <li>3D CAD visualization</li>
+              <li>Assembly instructions</li>
+              <li>Smart Production layouts</li>
+              <li>Cost and size optimization</li>
+              <li>Parametric Design standards</li>
+              <li>Print and prepress</li>
+              <li>&nbsp;</li>
+              <li>CNC Material Cutting</li>
+              <li>Prototyping and production</li>
+              <li>Kongsberg specialist</li>
+              <li>Material Handling</li>
+              <li>Material Knife/bit setting advice</li>
+            </ul>
+            <svg
+              class="arrow_l aboutArrow_l aboutTrigger_l"
+              width="84"
+              height="125"
+              viewBox="0 0 239.5 353.2"
+            >
+              <line
+                x1="119.7"
+                y1="17.7"
+                x2="119.7"
+                y2="353.2"
+                vector-effect="non-scaling-stroke"
+              />
+              <polyline
+                points="8.8 128.6 119.7 17.7 230.6 128.6"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="right_l" class="flipContainer_l">
+        <div id="designingPanel_l" class="flipPanel_l">
+          <div id="designingFront_l" class="designingTrigger_l flipFront_l">
+            <p>
+              DESIGNING
+              <br />
+              STRUCTURES
+            </p>
+          </div>
+          <div id="designingBack_l" class="flipBack_l hoz_l">
+            <div class="designBackText_l small">
+              As an experienced paper architect, Lina creates
+              <br class="break" />
+              tailor-made design solutions for lightweight paper
+              <br class="break" />
+              furniture, retail POP and POS displays, large-scale
+              <br class="break" />
+              installations, window staging, trade show booths,
+              <br class="break" />
+              packaging and toys. When designing structures,
+              <br class="break" />
+              the focus is always on balancing creativity and
+              <br class="break" />
+              technical optimization. With years of hands-on
+              <br class="break" />
+              expertise in digital CNC, the studio likes to explore
+              <br class="break" />
+              the possibilities of new, alternative and green
+              <br class="break" />
+              materials as a foundation to new concepts.
+            </div>
+            <svg
+              class="arrow_l designArrow_l designingTrigger_l"
+              width="84"
+              height="125"
+              viewBox="0 0 239.5 353.2"
+            >
+              <line
+                x1="119.7"
+                y1="17.7"
+                x2="119.7"
+                y2="353.2"
+                vector-effect="non-scaling-stroke"
+              />
+              <polyline
+                points="8.8 128.6 119.7 17.7 230.6 128.6"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+        </div>
+        <div id="structuringPanel_l" class="flipPanel_l">
+          <div id="structuringFront_l" class="structuringTrigger_l flipFront_l">
+            <p>
+              STRUCTURING
+              <br />
+              DESIGNS
+            </p>
+          </div>
+          <div id="structuringBack_l" class="flipBack_l hoz_l">
+            <div class="structuringBackText_l small">
+              Lina’s unique strength lies in the in-depth
+              <br class="break" />
+              understanding of the complete design-print-cut
+              <br class="break" />
+              workflow, allowing her to support every design
+              <br class="break" />
+              with an extensive technical approach. Ecological
+              <br class="break" />
+              concerns such as material selection, waste
+              <br class="break" />
+              minimisation and fitting designs to standard
+              <br class="break" />
+              shipping formats are all part of the design process.
+              <br class="break" />
+              Projects are taken from the first conceptual
+              <br class="break" />
+              sketch to the final production file, relying on an
+              <br class="break" />
+              extensive range of structural and
+              <span class="aboutUnderlineP_l aboutTrigger_l">
+                technical skills
+                <span class="aboutUnderline_l"></span> </span
+              >&#8239;.
+            </div>
+            <svg
+              class="arrow_l structureArrow_l structuringTrigger_l"
+              width="84"
+              height="125"
+              viewBox="0 0 239.5 353.2"
+            >
+              <line
+                x1="119.7"
+                y1="17.7"
+                x2="119.7"
+                y2="353.2"
+                vector-effect="non-scaling-stroke"
+              />
+              <polyline
+                points="8.8 128.6 119.7 17.7 230.6 128.6"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="shadow_l">
+        <div class="shadowLeft_l"></div>
+        <div class="shadowRight_l">
+          <div class="shadowRightTop_l"></div>
+          <div class="shadowRightBottom_l"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="iconContainer_p">
+      <div id="icon_p" onclick="animatePortrait()">
+        <svg id="open_p" class="icon" viewBox="0 0 283.46 283.46">
+          <path
+            d="M29.6 29.6v224.27h112.13V29.6m112.14 224.27V29.6M141.73 142.56h112.14"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+        <svg
+          id="closed_p"
+          class="icon"
+          viewBox="0 0 283.46 283.46"
+          fill="none"
+          stroke="#00f"
+          stroke-miterlimit="10"
+          stroke-width="3.55"
+        >
+          <path
+            d="M144.31 139.49v132.12L29.9 205.56V73.44l114.41 66.05z"
+            vector-effect="non-scaling-stroke"
+          />
+          <path
+            d="M144.32 139.5l109.25-63.08M141.73 11.85l111.84 64.57v129.14"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <div id="portrait">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div id="designingSlide_p">
+              <div id="designingTop_p" class="topContainer_p">
+                <div id="designingTitle_p" class="slideTitle_p">
+                  DESIGNING
+                  <br />
+                  STRUCTURES
+                </div>
+                <nav class="slideNavigation_p">
+                  <div class="slideNavLeft_p"></div>
+                  <div class="slideHeader_p"></div>
+                  <div class="slideNavRight_p aboutTrigger_p">
+                    <svg
+                      class="arrow_p rightArrow_p"
+                      width="84"
+                      height="125"
+                      viewBox="0 0 239.5 353.2"
+                    >
+                      <line
+                        x1="119.7"
+                        y1="17.7"
+                        x2="119.7"
+                        y2="353.2"
+                        vector-effect="non-scaling-stroke"
+                      />
+                      <polyline
+                        points="8.8 128.6 119.7 17.7 230.6 128.6"
+                        vector-effect="non-scaling-stroke"
+                      />
+                    </svg>
+                  </div>
+                </nav>
+              </div>
+              <div class="bottomContainer_p">
+                <div id="designingPanel_p">
+                  <div id="designingPanelFront_p" class="small">
+                    As an experienced paper architect, Lina creates
+                    <br />
+                    tailor-made design solutions for lightweight paper
+                    <br />
+                    furniture, retail POP and POS displays, large-scale
+                    <br />
+                    installations, window staging, trade show booths,
+                    <br />
+                    packaging and toys. When designing structures,
+                    <br />
+                    the focus is always on balancing creativity and
+                    <br />
+                    technical optimization. With years of hands-on
+                    <br />
+                    expertise in digital CNC, the studio likes to explore
+                    <br />
+                    the possibilities of new, alternative and green
+                    <br />
+                    materials as a foundation to new concepts.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div id="aboutSlide_p">
+              <div class="fullContainer_p">
+                <nav class="slideNavigation_p">
+                  <div class="slideNavLeft_p designingTrigger_p">
+                    <svg
+                      class="arrow_p leftArrow_p"
+                      width="84"
+                      height="125"
+                      viewBox="0 0 239.5 353.2"
+                    >
+                      <line
+                        x1="119.7"
+                        y1="17.7"
+                        x2="119.7"
+                        y2="353.2"
+                        vector-effect="non-scaling-stroke"
+                      />
+                      <polyline
+                        points="8.8 128.6 119.7 17.7 230.6 128.6"
+                        vector-effect="non-scaling-stroke"
+                      />
+                    </svg>
+                  </div>
+                  <div class="slideHeader_p">STUDIO LH</div>
+                  <div class="slideNavRight_p structuringTrigger_p">
+                    <svg
+                      class="arrow_p rightArrow_p"
+                      width="84"
+                      height="125"
+                      viewBox="0 0 239.5 353.2"
+                    >
+                      <line
+                        x1="119.7"
+                        y1="17.7"
+                        x2="119.7"
+                        y2="353.2"
+                        vector-effect="non-scaling-stroke"
+                      />
+                      <polyline
+                        points="8.8 128.6 119.7 17.7 230.6 128.6"
+                        vector-effect="non-scaling-stroke"
+                      />
+                    </svg>
+                  </div>
+                </nav>
+                <div id="aboutText_p">
+                  <span class="noBreak"> Studio Lina Håkansson </span>
+                  <br />
+                  works at the intersection
+                  <br />
+                  of design and production,
+                  <br />
+                  offering a unique position
+                  <br />
+                  to challenge both how
+                  <br />
+                  to design structures and
+                  <br />
+                  how to structure designs.
+                </div>
+                <div id="aboutContact_p" class="small">
+                  <a href="mailto:studio@linahakansson.com">
+                    studio@linahakansson.com
+                  </a>
+                  <br />
+                  <a
+                    href="https://www.instagram.com/studiolinahakansson/"
+                    target="_blank"
+                  >
+                    Instagram
+                  </a>
+                </div>
+                <div id="iconFixed_p" onclick="animatePortrait()">
+                  <svg
+                    class="closed_p icon"
+                    viewBox="0 0 283.46 283.46"
+                    fill="none"
+                    stroke="#00f"
+                    stroke-miterlimit="10"
+                    stroke-width="3.55"
+                  >
+                    <path
+                      d="M144.31 139.49v132.12L29.9 205.56V73.44l114.41 66.05z"
+                      vector-effect="non-scaling-stroke"
+                    />
+                    <path
+                      d="M144.32 139.5l109.25-63.08M141.73 11.85l111.84 64.57v129.14"
+                      vector-effect="non-scaling-stroke"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div id="structuringSlide_p">
+              <div id="structuringTop_p" class="topContainer_p">
+                <nav class="slideNavigation_p">
+                  <div class="slideNavLeft_p aboutTrigger_p">
+                    <svg
+                      class="arrow_p leftArrow_p"
+                      width="84"
+                      height="125"
+                      viewBox="0 0 239.5 353.2"
+                    >
+                      <line
+                        x1="119.7"
+                        y1="17.7"
+                        x2="119.7"
+                        y2="353.2"
+                        vector-effect="non-scaling-stroke"
+                      />
+                      <polyline
+                        points="8.8 128.6 119.7 17.7 230.6 128.6"
+                        vector-effect="non-scaling-stroke"
+                      />
+                    </svg>
+                  </div>
+                  <div class="slideHeader_p"></div>
+                  <div class="slideNavRight_p"></div>
+                </nav>
+                <div id="structuringTitle_p" class="slideTitle_p">
+                  STRUCTURING
+                  <br />
+                  DESIGN
+                </div>
+              </div>
+              <div class="bottomContainer_p">
+                <div id="structuringPanel_p">
+                  <div id="structuringPanelFront_p" class="small techTrigger_p">
+                    Lina’s unique strength lies in the in-depth
+                    <br />
+                    understanding of the complete design-print-cut
+                    <br />
+                    workflow, allowing her to support every design
+                    <br />
+                    with an extensive technical approach. Ecological
+                    <br />
+                    concerns such as material selection, waste
+                    <br />
+                    minimisation and fitting designs to standard
+                    <br />
+                    shipping formats are all part of the design process.
+                    <br />
+                    Projects are taken from the first conceptual
+                    <br />
+                    sketch to the final production file, relying on an
+                    <br />
+                    extensive range of structural and
+                    <span class="underline_p"> technical skills. </span>
+                  </div>
+                </div>
+              </div>
+              <div id="shadow_p"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tech_p" class="flipContainer_p">
+            <div id="techPanel_p" class="flipPanel_p">
+                <ul class="small list_p">
+                  <li>Design Concepts</li>
+                  <li>Structural engineering</li>
+                  <li>2D CAD drawings &ndash; ArtiosCAD</li>
+                  <li>3D CAD visualization</li>
+                  <li>Assembly instructions</li>
+                  <li>Smart Production layouts</li>
+                  <li>Cost and size optimization</li>
+                  <li>Parametric Design standards</li>
+                  <li>Print and prepress</li>
+                  <li>&nbsp;</li>
+                  <li>CNC Material Cutting</li>
+                  <li>Prototyping and production</li>
+                  <li>Kongsberg specialist</li>
+                  <li>Material Handling</li>
+                  <li>Material Knife/bit setting advice</li>
+                </ul>
+                <svg
+                  class="arrow_p techArrow_p techTrigger_p"
+                  width="84"
+                  height="125"
+                  viewBox="0 0 239.5 353.2"
+                >
+                  <line
+                    x1="119.7"
+                    y1="17.7"
+                    x2="119.7"
+                    y2="353.2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <polyline
+                    points="8.8 128.6 119.7 17.7 230.6 128.6"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+          </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
