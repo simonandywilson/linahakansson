@@ -13,58 +13,64 @@ Media Queries
 ----------------------------------------*/
 
 /* Portrait */
-@media only screen and (orientation: portrait) and (max-width: 699px)  {
+@media only screen and (orientation: portrait) and (max-width: 449px)  {
     :root {
         --normal-font-size: 8.2vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.5);
+        --small-font-size: calc(var(--normal-font-size) * 0.57);
+        --arrow-height: calc(var(--normal-font-size) * 1);
         --border-weight: 1vw;
         --padding: 3vw;
         --icon-size: 14vw;
-        --break: block;
     }
 }
-@media only screen and (orientation: portrait) and (min-width: 700px)  {
+@media only screen and (orientation: portrait) and (min-width: 450px)  {
     :root {
         --normal-font-size: 8.2vw;
         --small-font-size: calc(var(--normal-font-size) * 0.5);
+        --arrow-height: calc(var(--normal-font-size) * 1);
         --border-weight: 0.7vw;
         --padding: 3vw;
         --icon-size: 14vw;
-        --break: block;
     }
 }
 
 /* Landscape */
 @media only screen and (orientation: landscape) and (max-height: 599px) {
     :root {
-        --normal-font-size: 3.9vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.42);
+        --normal-font-size: 3.4vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.45);
+        --arrow-height: calc(var(--normal-font-size) * 0.6);
         --border-weight: 0.4vw;
-        --padding: 1.5vw;
-        --icon-size: 8vw;
-        --break: none;
+        --padding: 1.25vw;
+        --icon-size: 5vw;
+        --break-large: none;
+        --break-small: none;
     }
 }
 
 @media only screen and (orientation: landscape) and (min-height: 600px) {
     :root {
-        --normal-font-size: 4vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.48);
+        --normal-font-size: 3.9vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.42);
+        --arrow-height: calc(var(--normal-font-size) * 0.6);
         --border-weight: 0.4vw;
         --padding: 1.5vw;
-        --icon-size: 8vw;
-        --break: none;
+        --icon-size: 6vw;
+        --break-large: block;
+        --break-small: none;
     }
 }
 
-@media only screen and (orientation: landscape) and (min-height: 700px) {
+@media only screen and (orientation: landscape) and (min-height: 900px) {
     :root {
-        --normal-font-size: 4.1vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.5);
+        --normal-font-size: 4vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.42);
+        --arrow-height: calc(var(--normal-font-size) * 0.75);
         --border-weight: 0.4vw;
         --padding: 1.5vw;
         --icon-size: 8vw;
-        --break: block;
+        --break-large: block;
+        --break-small: none;
     }
 }
 
@@ -76,9 +82,8 @@ Media Queries
     --underline: calc(var(--border-weight) * 0.5);
     --thin-underline: calc(var(--border-weight) * 0.5);
 
-    --arrow-weight: calc(var(--border-weight) / 2);
-    --arrow-height: var(--normal-font-size);
-    --logo-weight: calc(var(--border-weight) / 2);
+    --arrow-weight: calc(var(--border-weight) * 0.5);
+    --logo-weight: calc(var(--border-weight) * 0.5);
 
     --background: #CCCCCC;
     --border-colour: #0000FF;
@@ -143,8 +148,12 @@ Typography
     white-space: nowrap;
 }
 
-.break {
-    display: var(--break);
+.break_l {
+    display: var(--break-large);
+}
+
+.break_s {
+    display: var(--break-small);
 }
 
 a {

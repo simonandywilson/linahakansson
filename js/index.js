@@ -26,7 +26,7 @@ const portrait = document.getElementById("portrait");
 const landscape = document.getElementById("landscape");
 const iconContainer_l = document.getElementById("iconContainer_l");
 const iconContainer_p = document.getElementById("iconContainer_p");
-const iconFixed_p = document.getElementById("iconFixed_p");
+const iconFixed_p = document.getElementById("iconFixedContainer_p");
 
 const face = document.querySelectorAll(".face");
 const leftContainer = document.querySelectorAll(".leftContainer");
