@@ -21,6 +21,8 @@ Media Queries
         --border-weight: 1vw;
         --padding: 3vw;
         --icon-size: 14vw;
+        --break-large: none;
+        --break-small: none;
     }
 }
 @media only screen and (orientation: portrait) and (min-width: 450px)  {
@@ -31,14 +33,29 @@ Media Queries
         --border-weight: 0.7vw;
         --padding: 3vw;
         --icon-size: 14vw;
+        --break-large: none;
+        --break-small: none;
+    }
+}
+
+@media only screen and (orientation: portrait) and (min-width: 800px)  {
+    :root {
+        --normal-font-size: 7vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.51);
+        --arrow-height: calc(var(--normal-font-size) * 1);
+        --border-weight: 0.7vw;
+        --padding: 3vw;
+        --icon-size: 14vw;
+        --break-large: none;
+        --break-small: none;
     }
 }
 
 /* Landscape */
 @media only screen and (orientation: landscape) and (max-height: 599px) {
     :root {
-        --normal-font-size: 3.4vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.45);
+        --normal-font-size: 3.5vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.44);
         --arrow-height: calc(var(--normal-font-size) * 0.6);
         --border-weight: 0.4vw;
         --padding: 1.25vw;
@@ -50,26 +67,26 @@ Media Queries
 
 @media only screen and (orientation: landscape) and (min-height: 600px) {
     :root {
-        --normal-font-size: 3.9vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.42);
-        --arrow-height: calc(var(--normal-font-size) * 0.6);
+        --normal-font-size: 3.5vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.49);
+        --arrow-height: calc(var(--normal-font-size) * 0.7);
         --border-weight: 0.4vw;
         --padding: 1.5vw;
         --icon-size: 6vw;
-        --break-large: block;
+        --break-large: none;
         --break-small: none;
     }
 }
 
 @media only screen and (orientation: landscape) and (min-height: 900px) {
     :root {
-        --normal-font-size: 4vw;
-        --small-font-size: calc(var(--normal-font-size) * 0.42);
-        --arrow-height: calc(var(--normal-font-size) * 0.75);
+        --normal-font-size: 3.5vw;
+        --small-font-size: calc(var(--normal-font-size) * 0.53);
+        --arrow-height: calc(var(--normal-font-size) * 0.8);
         --border-weight: 0.4vw;
         --padding: 1.5vw;
         --icon-size: 8vw;
-        --break-large: block;
+        --break-large: none;
         --break-small: none;
     }
 }

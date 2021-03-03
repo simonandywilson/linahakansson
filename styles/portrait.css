@@ -81,12 +81,7 @@
     padding-top: calc(var(--padding) * 6);
 }
 
-#aboutContact_p {
-    margin-top: auto;
-    margin-left: var(--icon-size);
-    padding-left: var(--padding);
-    z-index: 99;
-}
+
 
 /*----------------------------------------
 Navigation
@@ -108,7 +103,7 @@ Navigation
     left: 0;
     display: flex;
     padding-top: calc(var(--padding) * 2);
-    padding-left: var(--padding);
+    padding-left: calc(var(--padding) + var(--border-weight));
     justify-content: flex-start;
     cursor: pointer;
 }
@@ -126,7 +121,7 @@ Navigation
     height: 100%;
     display: flex;
     padding-top: calc(var(--padding) * 2);
-    padding-right: var(--padding);
+    padding-right: calc(var(--padding) + var(--border-weight));
     justify-content: flex-end;
     cursor: pointer;
 }
@@ -288,9 +283,10 @@ Icon
 #iconContainer_p {
     visibility: hidden;
     position: fixed;
+    display: flex;
     height: 100%;
-    width: 50%;
-    z-index: 1000;
+    width: 100%;
+    z-index: 100;
     pointer-events: none;
 }
 
@@ -303,7 +299,7 @@ Icon
     align-items: center;
     justify-content: center;
     bottom: 0;
-    left: 0;
+    left: calc(var(--border-weight) * -1);
     margin: calc(var(--padding) + var(--border-weight));
     pointer-events: all;
     overflow: visible;
@@ -314,23 +310,12 @@ Icon
     visibility: hidden;
 }
 
-#iconFixedContainer_p {
+#contact_p {
+    visibility: hidden;
     position: absolute;
-    height: calc(var(--icon-size) * 2);
-    width: calc(var(--icon-size) + (var(--padding) * 2));
-    display: flex;
-    cursor: pointer;
-    bottom: 0;
-    left: 0;
+    bottom: calc(var(--padding) + var(--border-weight));
+    margin-left: calc(var(--icon-size) + var(--padding));
+    padding-left: var(--padding);
+    z-index: 99;
     pointer-events: all;
-}
-
-#iconFixed_p {
-    position: absolute;
-    height: var(--icon-size);
-    width: var(--icon-size);
-    cursor: pointer;
-    bottom: 0;
-    left: 0;
-    margin: calc(var(--padding));
 }

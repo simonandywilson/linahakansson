@@ -12,10 +12,6 @@
     flex-direction: column;
 }
 
-/* #right_l {
-    display: none;
-} */
-
 /*----------------------------------------
 Panels
 ----------------------------------------*/
@@ -174,9 +170,8 @@ Designing & Structuring
     margin-right: auto;
 }
 
-
 /*----------------------------------------
-Buttons
+Underlines
 ----------------------------------------*/
 
 .designingUnderlineP_l,
@@ -186,18 +181,20 @@ Buttons
     display: inline-block;
     position: relative;
     z-index: 99;
+    line-height: 100%;
 }
 
 .designingUnderline_l,
 .structuringUnderline_l {
+    line-height: 100%;
     display: inline-block;
-    width: 102%;
+    width: 100%;
     height: 0;
     position: absolute;
-    bottom: -5%;
+    bottom: -6%;
     margin: 0 auto;
-    left: -1%;
-    right: 1%;
+    left: 0;
+    right: 0;
     background-color: var(--border-colour);
     -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
@@ -206,13 +203,13 @@ Buttons
 
 .aboutUnderline_l {
     display: inline-block;
-    width: 102%;
+    width: 100%;
     height: var(--underline);
     position: absolute;
     bottom: 0;
     margin: 0 auto;
-    left: -1%;
-    right: 1%;
+    left: 0;
+    right: 0;
     background-color: var(--border-colour);
     -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
@@ -318,7 +315,7 @@ Icon
     position: fixed;
     height: 100%;
     width: 50%;
-    z-index: 99;
+    z-index: 100;
     pointer-events: none;
 }
 

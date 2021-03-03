@@ -27,6 +27,7 @@ const landscape = document.getElementById("landscape");
 const iconContainer_l = document.getElementById("iconContainer_l");
 const iconContainer_p = document.getElementById("iconContainer_p");
 const iconFixed_p = document.getElementById("iconFixedContainer_p");
+const contact_p = document.getElementById("contact_p");
 
 const face = document.querySelectorAll(".face");
 const leftContainer = document.querySelectorAll(".leftContainer");
@@ -74,6 +75,36 @@ mq.addEventListener("change", () => {
         masterTimeline.seek(0).clear();
         masterTimeline.add(portraitEndProps());
     }
+});
+
+// On swipe
+swiper.on("touchStart", function () {
+    gsap.to(iconContainer_p, {
+        autoAlpha: 0,
+        duration: 0.5,
+    });
+});
+
+swiper.on("reachEnd", function () {
+    gsap.to(iconContainer_p, {
+        autoAlpha: 0,
+        duration: 0.5,
+    });
+});
+
+swiper.on("reachStart", function () {
+    gsap.to(iconContainer_p, {
+        autoAlpha: 0,
+        duration: 0.5,
+    });
+});
+
+swiper.on("transitionEnd", function () {
+    if (swiper.activeIndex === 1)
+        gsap.to(iconContainer_p, {
+            autoAlpha: 1,
+            duration: 0.5,
+        });
 });
 
 /**
@@ -440,37 +471,25 @@ function portraitScale() {
 
 function portraitIn() {
     const timeline = gsap.timeline();
-    timeline.set(iconFixed_p, {
+    timeline.to(contact_p, {
         autoAlpha: 1,
+        duration: 1
     });
     timeline.to(portrait, {
         autoAlpha: 1,
         display: "flex",
         duration: 1,
-    });
+    },"<");
     timeline.to(loader, {
         autoAlpha: 0,
         display: "none",
         duration: 0.5,
     });
-    timeline.set(
-        iconContainer_p,
-        {
-            autoAlpha: 0,
-        },
-        "-=0.75"
-    );
     return timeline;
 }
 
 function portraitOut() {
     const timeline = gsap.timeline();
-    timeline.set(iconContainer_p, {
-        autoAlpha: 1,
-    });
-    timeline.set(iconFixed_p, {
-        autoAlpha: 0,
-    });
     timeline.to(loader, {
         autoAlpha: 1,
         display: "flex",
@@ -485,6 +504,10 @@ function portraitOut() {
         },
         "-=0.25"
     );
+    timeline.to(contact_p, {
+        autoAlpha: 0,
+        duration: 0.25,
+    },"<");
     return timeline;
 }
 
@@ -513,6 +536,9 @@ function portraitStartProps() {
     timeline.set(iconContainer_p, {
         autoAlpha: 1,
         display: "block",
+    });
+    timeline.set(contact_p, {
+        autoAlpha: 0,
     });
     timeline.set(leftContainer, {
         alignItems: "center",
@@ -576,12 +602,11 @@ function portraitEndProps() {
         display: "none",
     });
     timeline.set(iconContainer_p, {
-        autoAlpha: 0,
-        display: "block",
-    });
-    timeline.set(iconFixed_p, {
         autoAlpha: 1,
         display: "block",
+    });
+    timeline.set(contact_p, {
+        autoAlpha: 1,
     });
     timeline.set(leftContainer, {
         alignItems: "center",
