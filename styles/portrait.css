@@ -16,7 +16,12 @@
     position: relative;
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -29,7 +34,12 @@
 .fullContainer_p {
     position: relative;
     padding: var(--padding);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     background: #ffffff;
     height: 100%;
@@ -46,9 +56,18 @@
 }
 
 .topContainer_p {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     top: 0;
     left: 0;
@@ -90,16 +109,25 @@ Navigation
     top: 0;
     left: calc(var(--border-weight) * -1);
     width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
 }
 
 .slideNavLeft_p {
     width: 25%;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding-top: calc(var(--padding) * 2);
     padding-left: calc(var(--padding) + var(--border-weight));
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
     cursor: pointer;
 }
@@ -113,9 +141,13 @@ Navigation
 
 .slideNavRight_p {
     width: 25%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding-top: calc(var(--padding) * 2);
     padding-right: calc(var(--padding) + var(--border-weight));
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     cursor: pointer;
 }
@@ -153,6 +185,7 @@ Flip Properties
 }
 
 .hoz_p {
+    -webkit-transform: rotateX(-180deg);
     transform: rotateX(-180deg);
 }
 
@@ -166,6 +199,7 @@ Flip Properties
     position: relative;
     height: 100%;
     width: 100%;
+    -webkit-transform-origin: 50% 0%;
     transform-origin: 50% 0%;
 }
 
@@ -198,13 +232,17 @@ Tech
     position: relative;
     height: 100%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: var(--padding);
     background: #ffffff;
     border-left: solid var(--border-weight) var(--border-colour);
     border-bottom: solid var(--border-weight) var(--border-colour);
+    -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
     pointer-events: all;
+    -webkit-transform: rotateY(90deg);
     transform: rotateY(90deg);
 }
 
@@ -235,16 +273,19 @@ Arrows
 .leftArrow_p {
     position: relative;
     width: var(--arrow-height);
+    -webkit-transform: rotateZ(-90deg);
     transform: rotateZ(-90deg);
 }
 
 .rightArrow_p {
     width: var(--arrow-height);
+    -webkit-transform: rotateZ(90deg);
     transform: rotateZ(90deg);
     right: 0;
 }
 
 .downArrow_p {
+    -webkit-transform: rotateZ(180deg);
     transform: rotateZ(180deg);
     margin-left: auto;
     margin-right: auto;
@@ -253,6 +294,7 @@ Arrows
 
 .techArrow_p {
     width: var(--arrow-height);
+    -webkit-transform: rotateZ(90deg);
     transform: rotateZ(90deg);
     margin-top: auto;
     margin-bottom: auto;
@@ -266,6 +308,7 @@ Text/Underline
 .underline_p {
     cursor: pointer;
     text-decoration: underline;
+    -webkit-text-decoration-color: var(--border-colour);
     text-decoration-color: var(--border-colour);
     text-decoration-thickness: var(--thin-underline);
 }
@@ -277,6 +320,8 @@ Icon
 #iconContainer_p {
     visibility: hidden;
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     width: 100%;
@@ -289,8 +334,14 @@ Icon
     height: var(--icon-size);
     width: var(--icon-size);
     cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     bottom: 0;
     left: calc(var(--border-weight) * -1);
@@ -298,6 +349,7 @@ Icon
     pointer-events: all;
     overflow: visible;
     z-index: 100;
+    -webkit-transform: scale(0);
     transform: scale(0);
 }
 
