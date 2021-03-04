@@ -191,7 +191,7 @@ Underlines
     width: 100%;
     height: 0;
     position: absolute;
-    bottom: -6%;
+    bottom: -5%;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -262,7 +262,7 @@ Shadow
     width: 100%;
     height: 100%;
     z-index: -99;
-    background-color: var(--background)
+    background-color: var(--background);
 }
 
 .shadowLeft_l,
@@ -348,6 +348,7 @@ Icon
     margin: calc(var(--padding) + var(--border-weight));
     pointer-events: all;
     overflow: visible;
+    transform: scale(0);
 }
 
 #open_l {

@@ -81,8 +81,6 @@
     padding-top: calc(var(--padding) * 6);
 }
 
-
-
 /*----------------------------------------
 Navigation
 ----------------------------------------*/
@@ -92,14 +90,12 @@ Navigation
     top: 0;
     left: calc(var(--border-weight) * -1);
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 50);
     display: flex;
     flex-direction: row;
 }
 
 .slideNavLeft_p {
     width: 25%;
-    height: 100%;
     left: 0;
     display: flex;
     padding-top: calc(var(--padding) * 2);
@@ -110,7 +106,6 @@ Navigation
 
 .slideHeader_p {
     width: 50%;
-    height: 100%;
     padding-top: calc(var(--padding) * 2);
     text-align: center;
     white-space: nowrap;
@@ -118,7 +113,6 @@ Navigation
 
 .slideNavRight_p {
     width: 25%;
-    height: 100%;
     display: flex;
     padding-top: calc(var(--padding) * 2);
     padding-right: calc(var(--padding) + var(--border-weight));
@@ -303,7 +297,8 @@ Icon
     margin: calc(var(--padding) + var(--border-weight));
     pointer-events: all;
     overflow: visible;
-    z-index: 10000;
+    z-index: 100;
+    transform: scale(0);
 }
 
 #open_p {

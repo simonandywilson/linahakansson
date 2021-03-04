@@ -25,7 +25,9 @@ const loader = document.getElementById("loader");
 const portrait = document.getElementById("portrait");
 const landscape = document.getElementById("landscape");
 const iconContainer_l = document.getElementById("iconContainer_l");
+const icon_l = document.getElementById("icon_l");
 const iconContainer_p = document.getElementById("iconContainer_p");
+const icon_p = document.getElementById("icon_p");
 const iconFixed_p = document.getElementById("iconFixedContainer_p");
 const contact_p = document.getElementById("contact_p");
 
@@ -50,14 +52,25 @@ function animateBox(mq) {
         masterTimeline.add(landscapeScale());
         masterTimeline.add(landscapeForward());
         masterTimeline.add(landscapeIn(), "-=0.25");
+        gsap.to(icon_l, {
+            scale: 1,
+            duration: 1,
+            delay: 3.75,
+        });
         masterTimeline.play();
         masterTimeline.add(landscapeEndProps());
+        
     } else {
         // Portrait
         masterTimeline.add(portraitStartProps());
         masterTimeline.add(portraitScale());
         masterTimeline.add(portraitForward());
         masterTimeline.add(portraitIn(), "-=0.25");
+        gsap.to(icon_p, {
+            scale: 1,
+            duration: 1,
+            delay: 4,
+        });
         masterTimeline.play();
         masterTimeline.add(portraitEndProps());
     }
@@ -78,21 +91,7 @@ mq.addEventListener("change", () => {
 });
 
 // On swipe
-swiper.on("touchStart", function () {
-    gsap.to(iconContainer_p, {
-        autoAlpha: 0,
-        duration: 0.5,
-    });
-});
-
-swiper.on("reachEnd", function () {
-    gsap.to(iconContainer_p, {
-        autoAlpha: 0,
-        duration: 0.5,
-    });
-});
-
-swiper.on("reachStart", function () {
+swiper.on("sliderMove", function () {
     gsap.to(iconContainer_p, {
         autoAlpha: 0,
         duration: 0.5,
@@ -100,11 +99,25 @@ swiper.on("reachStart", function () {
 });
 
 swiper.on("transitionEnd", function () {
-    if (swiper.activeIndex === 1)
+    if (swiper.activeIndex === 1) {
         gsap.to(iconContainer_p, {
             autoAlpha: 1,
             duration: 0.5,
         });
+    } else if (swiper.activeIndex === 0 || swiper.activeIndex === 2) {
+        gsap.set(iconContainer_p, {
+            autoAlpha: 0,
+        });
+    }
+});
+
+swiper.on("slideChangeTransitionStart", function () {
+    if (swiper.activeIndex === 0 || swiper.activeIndex === 2) {
+        gsap.to(iconContainer_p, {
+            autoAlpha: 0,
+            duration: 0.5,
+        });
+    }
 });
 
 /**
@@ -225,6 +238,14 @@ function landscapeScale() {
     });
 }
 
+function landscapeIconScale() {
+    const timeline = gsap.timeline();
+    timeline.to("#icon_l", {
+        scale: 1,
+        duration: 2
+    });
+}
+
 function landscapeStartProps() {
     const timeline = gsap.timeline();
     timeline.set("#loader, .leftContainer, .rightContainer, .face, .rightTop, .leftTop", {
@@ -304,6 +325,9 @@ function landscapeEndProps() {
     timeline.set(iconContainer_p, {
         autoAlpha: 0,
         display: "none",
+    });
+    timeline.set(icon_l, {
+        scale: 1,
     });
     timeline.set(leftContainer, {
         alignItems: "flex-end",
@@ -469,6 +493,13 @@ function portraitScale() {
     });
 }
 
+function portraitIconScale() {
+    const timeline = gsap.timeline();
+    timeline.to("#icon_p", {
+        scale: 1,
+    });
+}
+
 function portraitIn() {
     const timeline = gsap.timeline();
     timeline.to(contact_p, {
@@ -607,6 +638,9 @@ function portraitEndProps() {
     });
     timeline.set(contact_p, {
         autoAlpha: 1,
+    });
+    timeline.set(icon_p, {
+        scale: 1,
     });
     timeline.set(leftContainer, {
         alignItems: "center",

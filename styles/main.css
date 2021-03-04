@@ -104,6 +104,11 @@ Media Queries
 
     --background: #CCCCCC;
     --border-colour: #0000FF;
+
+    touch-action: pan-x pan-y;
+    height: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /*----------------------------------------
@@ -297,3 +302,21 @@ Icon
     fill: none;
     stroke: var(--border-colour);
 }
+
+/* .scaleIn {
+    transform: scale(0);
+    animation-name: scaleIn;
+    animation-duration: 2s;
+    animation-delay: 2.5s;
+    animation-timing-function: cubic-bezier(0.75, 0.01, 0.35, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+} */
