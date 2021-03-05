@@ -104,15 +104,6 @@ Media Queries
 
     --background: #cccccc;
     --border-colour: #0000ff;
-
-    -ms-touch-action: pan-x pan-y;
-    touch-action: pan-x pan-y;
-    height: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
 /*----------------------------------------
@@ -122,6 +113,15 @@ Main
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    /* -ms-touch-action: pan-x;
+    touch-action: pan-x; */
 }
 
 @-ms-viewport {

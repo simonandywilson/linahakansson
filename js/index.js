@@ -59,7 +59,6 @@ function animateBox(mq) {
         });
         masterTimeline.play();
         masterTimeline.add(landscapeEndProps());
-        
     } else {
         // Portrait
         masterTimeline.add(portraitStartProps());
@@ -119,6 +118,51 @@ swiper.on("slideChangeTransitionStart", function () {
         });
     }
 });
+
+// Detect swipe
+portrait.addEventListener("touchstart", startTouch, false);
+portrait.addEventListener("touchmove", moveTouch, false);
+
+let initialX = null;
+let initialY = null;
+
+function startTouch(e) {
+    initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
+}
+
+function moveTouch(e) {
+    if (initialX === null) {
+        return;
+    }
+    if (initialY === null) {
+        return;
+    }
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+    let diffX = initialX - currentX;
+    let diffY = initialY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) {
+        } else {
+        }
+    } else {
+        // sliding vertically
+        if (diffY > 0) {
+            // swiped up
+            swiper.slideNext(1000);
+        } else {
+            // swiped down
+            swiper.slidePrev(1000);
+        }
+    }
+
+    initialX = null;
+    initialY = null;
+
+    e.preventDefault();
+}
 
 /**
  ***********************************************
@@ -242,7 +286,7 @@ function landscapeIconScale() {
     const timeline = gsap.timeline();
     timeline.to("#icon_l", {
         scale: 1,
-        duration: 2
+        duration: 2,
     });
 }
 
@@ -504,13 +548,17 @@ function portraitIn() {
     const timeline = gsap.timeline();
     timeline.to(contact_p, {
         autoAlpha: 1,
-        duration: 1
-    });
-    timeline.to(portrait, {
-        autoAlpha: 1,
-        display: "flex",
         duration: 1,
-    },"<");
+    });
+    timeline.to(
+        portrait,
+        {
+            autoAlpha: 1,
+            display: "flex",
+            duration: 1,
+        },
+        "<"
+    );
     timeline.to(loader, {
         autoAlpha: 0,
         display: "none",
@@ -535,10 +583,14 @@ function portraitOut() {
         },
         "-=0.25"
     );
-    timeline.to(contact_p, {
-        autoAlpha: 0,
-        duration: 0.25,
-    },"<");
+    timeline.to(
+        contact_p,
+        {
+            autoAlpha: 0,
+            duration: 0.25,
+        },
+        "<"
+    );
     return timeline;
 }
 
@@ -1165,6 +1217,9 @@ aboutTrigger_l.forEach(function (trigger) {
  * Portrait Panel Animations
  */
 
+techFlip.set(techPanel_p, {
+    autoAlpha: 1,
+});
 techFlip.to(
     techPanel_p,
     {

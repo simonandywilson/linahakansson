@@ -244,6 +244,7 @@ Tech
     pointer-events: all;
     -webkit-transform: rotateY(90deg);
     transform: rotateY(90deg);
+    visibility: hidden;
 }
 
 ul.list_p {
