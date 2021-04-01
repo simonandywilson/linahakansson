@@ -75,19 +75,40 @@ function animateBox(mq) {
     }
 }
 
-// On resize
-mq.addEventListener("change", () => {
-    if (masterTimeline.progress() < 1) {
-        animateBox(mq);
+// On Resize
+try {
+    // Chrome, Firefox & Safari 14<
+    mq.addEventListener("change", (e) => {
+        if (masterTimeline.progress() < 1) {
+            animateBox(mq);
+        }
+        if (mq.matches) {
+            masterTimeline.seek(0).clear();
+            masterTimeline.add(landscapeEndProps());
+        } else {
+            masterTimeline.seek(0).clear();
+            masterTimeline.add(portraitEndProps());
+        }
+    });
+} catch (e1) {
+    try {
+        // Safari >13
+        mq.addListener((e) => {
+            if (masterTimeline.progress() < 1) {
+                animateBox(mq);
+            }
+            if (mq.matches) {
+                masterTimeline.seek(0).clear();
+                masterTimeline.add(landscapeEndProps());
+            } else {
+                masterTimeline.seek(0).clear();
+                masterTimeline.add(portraitEndProps());
+            }
+        });
+    } catch (e2) {
+        console.error(e2);
     }
-    if (mq.matches) {
-        masterTimeline.seek(0).clear();
-        masterTimeline.add(landscapeEndProps());
-    } else {
-        masterTimeline.seek(0).clear();
-        masterTimeline.add(portraitEndProps());
-    }
-});
+}
 
 // On swipe
 swiper.on("sliderMove", function () {

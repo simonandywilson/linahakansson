@@ -119,9 +119,6 @@ Main
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-
-    /* -ms-touch-action: pan-x;
-    touch-action: pan-x; */
 }
 
 @-ms-viewport {
@@ -160,6 +157,10 @@ html body {
 #landscape,
 #portrait {
     display: none;
+    visibility: hidden;
+}
+
+#loader {
     visibility: hidden;
 }
 
@@ -242,6 +243,7 @@ Cube
 .face {
     position: relative;
     background: #ffffff;
+    will-change: transform;
 }
 
 .leftTop {
