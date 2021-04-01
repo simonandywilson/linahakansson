@@ -1177,13 +1177,21 @@ aboutFlip.to(
     "<"
 );
 aboutFlip.to(
+    icon_l,
+    {
+        autoAlpha: 0,
+        duration: 0.25,
+    },
+    "=-0.5"
+);
+aboutFlip.to(
     designingPanel_l,
     {
         autoAlpha: 0,
         zIndex: "-99",
         duration: 0.25,
     },
-    "=-0.25"
+    "<"
 );
 aboutFlip.to(
     structuringPanel_l,
