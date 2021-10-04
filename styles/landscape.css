@@ -171,6 +171,10 @@ Designing & Structuring
     margin-right: auto;
 }
 
+.structuringBackText_l {
+    z-index: 0;
+}
+
 /*----------------------------------------
 Underlines
 ----------------------------------------*/

@@ -4,7 +4,7 @@ gsap.defaults({
     ease: "power2.inOut",
 });
 
-let swiper = new Swiper(".swiper-container", {
+let swiper = new Swiper(".swiper", {
     initialSlide: 1,
     effect: "cube",
     grabCursor: true,
